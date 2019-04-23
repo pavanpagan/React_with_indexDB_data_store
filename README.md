@@ -1,13 +1,13 @@
 # React_with_indexDB_data_store
 Its a simple React application which uses indexDb to store data and display it
 
-#opening Database
+# opening Database
    request = window.indexedDB.open("kotmaster", 3);
-#Error Handler
+# Error Handler
     request.onerror=(e)=>{
       console.log("error",e);
     }
-#success Handler
+# success Handler
     request.onsuccess=(e)=>{
         db=request.result;
         tx=db.transaction("FormDataStore",'readwrite');
@@ -32,7 +32,7 @@ Its a simple React application which uses indexDb to store data and display it
           db.close();
         }
     }
-#Creating or updating the version of the database
+# Creating or updating the version of the database
     request.onupgradeneeded=(e)=>{
       let db=request.result,
           store=db.createObjectStore("FormDataStore",{autoIncrement:true});
